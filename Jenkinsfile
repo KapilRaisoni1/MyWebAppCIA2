@@ -30,6 +30,7 @@ pipeline {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ubuntu@43.204.116.192 "
                         docker stop mywebapp || true && docker rm mywebapp || true
+                        docker pull kapil7919/mywebapp:12
                         docker run -d --name mywebapp -p 80:80 kapil7919/mywebapp:12
                         "
                     '''
