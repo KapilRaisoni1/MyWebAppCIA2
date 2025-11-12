@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t kapil7919/mywebapp:12 .'
+                sh 'docker build --no-cache -t kapil7919/mywebapp:12 .'
             }
         }
         stage('Push Docker Image') {
